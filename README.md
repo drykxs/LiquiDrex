@@ -1,4 +1,4 @@
- * Copyright (c) 2025 LiquiDREX
+ * Copyright (c) 2025 LiquiDrex
 
 https://www.liquidrex.tec.br/
 
