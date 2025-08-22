@@ -1,6 +1,6 @@
 # LiquiDrex – Open Finance + Drex (SaaS)
 
-LiquiDrexé um **SaaS neutro** que orquestra:
+LiquiDrex um **SaaS neutro** que orquestra:
 - **Pagamento** via **Open Finance** (Pix),
 - **Contratos inteligentes** no **Drex** (parcelado/BNPL, DvP, cessão, colateral),
 - **Abstração de gás/quota** (relayer) e **compliance** (KYC/AML, LGPD),
