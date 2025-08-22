@@ -1,5 +1,5 @@
 
-# 🔄 Novo Modelo LiquiDREX (sem blockchain)
+# 🔄 Novo Modelo LiquiDrex (sem blockchain)
 
 ### 📌 Contexto
 
