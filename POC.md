@@ -1,4 +1,4 @@
-# LiquiDREX – Collateral Credit (POC)
+# LiquiDrex – Collateral Credit (POC)
 
 Empréstimo parcelado com **garantia NFT**, **desembolso em RealToken (mock CBDC)** e **baixa de parcelas por prova Pix** (assinada por oráculo).
 
