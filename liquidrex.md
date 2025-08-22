@@ -1,7 +1,7 @@
 # Descrição
 > **Drex sobre Besu (ou DLT compatível)** 
 >**Bacen** controla o acesso via **Permissioning Plugin** (node‑level e/ou smart‑contract‑level). 
-> E  o **gateway Pix** é um **capability** atrelado ao Real, exposto apenas a participantes com permissão explícita.
+>  **Gateway Pix capability** atrelado ao Real, exposto apenas a participantes com permissão explícita.
 
 ---
 
