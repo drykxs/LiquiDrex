@@ -1,7 +1,11 @@
 # 🔌 Exemplo de API (LiquiDREX – Open Finance + Drex)
 
-> **Objetivo**: orquestrar um pagamento **Pix** via Open Finance, registrar a venda/parcelado como **Contrato‑Drex** e, opcionalmente, **emitir/ceder recebíveis**, **tudo via OpenFinance em parceria com os bancos**.
-> 
+> **Objetivo**: orquestrar um pagamento **Pix** via Open Finance, registrar a venda/parcelado como **Contrato‑Drex** e, opcionalmente, emitir/ceder recebíveis.
+>
+> ### Tudo via OpenFinance em parceria com os bancos.
+
+---
+
 ## Autenticação
 
 * **B2B**: OAuth2 *client\_credentials* + mTLS entre parceiro (banco/fintech) ↔ LiquiDREX.
