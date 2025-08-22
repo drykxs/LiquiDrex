@@ -93,15 +93,22 @@ compensacao:
 ```
 
 ---
+## Fluxograma
 
-## ✅ Benefícios
+<img width="2055" height="1470" alt="image" src="https://github.com/user-attachments/assets/6eb61542-92e3-4493-8def-b6b87182fec1" />
 
-* **Compatível 100%** com a infraestrutura oficial (sem blockchain).
-* **Auditável** via logs CEDSFN.
-* **Baixo risco regulatório**, já que opera como arranjo de pagamento autorizado.
-* **Escalável**, pois SPI já processa milhões de transações em tempo real.
-* **Expansível** para crédito com garantia, cashback e outros benefícios.
+
+1. Usuário paga **Pix (R\$95)** via **SPI**.
+2. **LiquiDREX SaaS** recebe confirmação e credita:
+
+   * **R\$105 em saldo específico** (ex.: SPTrans, CEA, SemParar).
+   * **+20 em cashback Drex livre**.
+3. Usuário gasta nos **parceiros credenciados**.
+4. Parceiro solicita compensação via **CEDSFN (mensageria ISO 20022)**.
+5. LiquiDREX emite ordem no **STR** (reservas bancárias).
+6. **Selic** pode registrar títulos de lastro/colateral.
+7. **Bacen** faz a liquidação final e registro contábil.
 
 ---
 
-👉 Posso desenhar o **novo diagrama visual** (com STR, SPI, Selic e CEDSFN) para substituir o anterior e mostrar claramente como o LiquiDREX se encaixa?
+
