@@ -3,6 +3,8 @@
 > **Objetivo**: orquestrar um pagamento **Pix** via Open Finance, registrar a venda/parcelado como **Contrato‑Drex** e, opcionalmente, emitir/ceder recebíveis.
 >
 > ### Tudo via OpenFinance em parceria com os bancos.
+>
+> O Ingresso na fase 1 (dos bancos) ocorreu via [pilot-kit](https://github.com/bacen/pilotord-kit-onboarding/blob/main/ingresso.md)
 
 ---
 
