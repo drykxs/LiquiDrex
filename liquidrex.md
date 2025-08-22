@@ -1,4 +1,4 @@
-# LiquiDREX – Smart Contracts (POC)
+# LiquiDrex – Smart Contracts (POC)
 
 Este repositório contém os contratos inteligentes que compõem a POC (Prova de Conceito) da **bandeira LiquiDREX**, uma rede de integração entre o **sistema financeiro tradicional (Pix / Open Finance / Real)** e a **infraestrutura Drex** via blockchain permissionada.
 
