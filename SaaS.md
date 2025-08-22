@@ -1,8 +1,8 @@
- * Copyright (c) 2025 LiquiDREX
+ * Copyright (c) 2025 LiquiDrex
 
 
 
-# 🔌 Exemplo de API (LiquiDREX – Open Finance + Drex)
+# 🔌 Exemplo de API (LiquiDrex – Open Finance + Drex)
 
 > **Objetivo**: orquestrar um pagamento **Pix** via Open Finance, registrar a venda/parcelado como **Contrato‑Drex** e, opcionalmente, emitir/ceder recebíveis.
 >
