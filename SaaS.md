@@ -322,12 +322,6 @@ npm run test:int    # integração (mocks de Pix/Drex)
 
 ---
 
-## Licença
-
-MIT (ver `LICENSE`).
-
----
-
 ## Avisos
 
 Este software é **experimental** e deve ser usado apenas em **ambientes de teste**.
