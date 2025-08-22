@@ -194,7 +194,6 @@ LiquiDREX é um **SaaS neutro** que orquestra:
 - **Iniciação de pagamento** via **Open Finance** (Pix),
 - **Contratos inteligentes** no **Drex** (parcelado/BNPL, DvP, cessão, colateral),
 - **Abstração de gás/quota** (relayer) e **compliance** (KYC/AML, LGPD),
-- Sem ser banco. É a “**bandeira Drex**” que cola todos os lados.
 
 > ⚠️ Projeto de **prototipagem**. Não é o Drex oficial do BCB.
 
