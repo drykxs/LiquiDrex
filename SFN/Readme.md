@@ -6,7 +6,7 @@ A **LiquiDREX** é um **SaaS de regras e reconciliação** que conecta **Pix (SP
 * **Ordens ao Bacen (CEDSFN/STR/SPI)**: **sempre** pelos **bancos parceiros**.
 * **LiquiDREX consolida** posições multilaterais (clearing privado) e **instrui** os bancos a liquidarem entre si.
 
-## 🚀 Como funciona (visão correta)
+## 🚀 Como funciona 
 
 1. O cliente paga **R\$95 via Pix** → **Banco do Cliente** liquida no **SPI**.
 2. O crédito entra no **Banco do Parceiro** (recebedor) via SPI/STR (lastro 1:1).
@@ -20,7 +20,7 @@ A **LiquiDREX** é um **SaaS de regras e reconciliação** que conecta **Pix (SP
 
 > Exceções (fraude/roubo): devolução **somente** pelo mecanismo **Pix MED**, acionado **pelo(s) banco(s)**; a LiquiDREX apenas **congela** os saldos promocionais e **orquestra** o fluxo documental.
 
-## 📊 Workflow ASCII (corrigido)
+## 📊 Workflow ASCII 
 
 ```
 [Usuário - App LiquiDREX]
