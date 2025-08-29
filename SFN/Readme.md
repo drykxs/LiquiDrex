@@ -1,20 +1,31 @@
+# 💳 LiquiDREX – Bandeira Drex/Pix Promocional
 
-# 🔄 Novo Modelo LiquiDrex (sem blockchain)
+A **LiquiDREX** é uma *fintech-bandeira* que atua como **SaaS de reconciliação e regras de negócio**, conectando **Pix (SPI)** com **Drex centralizado**.
 
-### 📌 Contexto
-
-O **Drex fase final (2026)** não rodará em blockchain, mas em **infraestrutura centralizada do Bacen**:
-
-* **STR** → liquidação de reservas bancárias em moeda oficial.
-* **SPI** → sistema do Pix (24/7, instantâneo, comunicação ISO 20022).
-* **Selic** → registro e custódia de títulos públicos.
-* **CEDSFN** → mensageria de comunicação segura entre participantes.
-
-A LiquiDREX funciona como **camada SaaS orquestradora**, **consolidando regras de negócio em contratos digitais** (não mais smart contracts on-chain, mas sim lógicas SaaS auditáveis), e usando as interfaces do Bacen.
+⚠️ Importante:  
+- A LiquiDREX **não faz custódia** de valores.  
+- **Os bancos parceiros** são os responsáveis por enviar ordens de liquidação ao STR/Selic.  
+- A LiquiDREX apenas **consolida posições, aplica regras promocionais e organiza créditos**.
 
 ---
 
-## ⚙️ Fluxo Técnico (sem blockchain)
+## 🚀 Como funciona
+
+1. **Usuário (App LiquiDREX)** paga **R$95 via Pix**.  
+2. O valor é liquidado pelo **SPI** diretamente em **conta de banco parceiro** (lastro 1:1 no Bacen).  
+3. O **Core SaaS LiquiDREX** recebe a confirmação via Open Finance / CEDSFN.  
+4. LiquiDREX aplica regras:  
+   - R$105 em **créditos restritos** (SPTrans, CEA, SemParar)  
+   - R$20 em **cashback DrexPromo** (rede livre)  
+5. Cliente enxerga **apenas o saldo de cashback** no app.  
+6. Parceiros (SPTrans, etc.) consomem diretamente o saldo restrito.  
+7. LiquiDREX **consolida reconciliação multilateral** entre parceiros.  
+8. **Bancos parceiros** enviam ordens de liquidação no STR/Selic.  
+9. **Bacen** registra a liquidação final.
+
+---
+
+## 📊 Workflow ASCII
 
 ```text
 [Usuário - App LiquiDREX]
@@ -23,92 +34,31 @@ A LiquiDREX funciona como **camada SaaS orquestradora**, **consolidando regras d
         v
 [SPI - Pagamentos Instantâneos]
         |
-        | (2) Confirma liquidação instantânea
+        | (2) Liquidação 1:1
         v
-[LiquiDREX - Core SaaS + Regras]
+[Banco Parceiro]
         |
-        | (3) Credita R$105 "saldo Drex específico" (SPTrans, CEA, SemParar)
-        | (4) Credita +20 "saldo cashback" (rede livre)
+        | (3) Confirmação via API (Open Finance / CEDSFN)
         v
-[Carteira Virtual Drex-like - off-ledger]
+[LiquiDREX - Core SaaS]
         |
-        | (5) Usuário gasta nos parceiros
+        | (4) Credita R$105 "restrito" (SPTrans, CEA, SemParar)
+        | (5) Credita +20 "cashback" (rede livre, app mostra)
+        v
+[Carteira Virtual - off-ledger]
+        |
+        | (6) Consumo de créditos nos parceiros
         v
 [Parceiro credenciado]
         |
-        | (6) Solicita compensação via CEDSFN/SPI
+        | (7) Solicita reconciliação via CEDSFN
         v
-[LiquiDREX + STR]
+[LiquiDREX - Consolidação]
         |
-        | (7) LiquiDREX envia instruções de liquidação no STR (reservas bancárias)
+        | (8) Envia posições para bancos parceiros
         v
-[Bacen - STR/Selic]
+[Bancos parceiros → STR/Selic]
         |
-        | (8) Liquidação final + registro contábil
-```
-
----
-
-## 🏦 Pontos-chave
-
-1. **Sem blockchain:**
-
-   * O saldo “Drex” é **contábil em SaaS LiquiDREX**, lastreado em contas de liquidação no **STR**.
-   * Não há emissão de tokens, mas sim créditos representativos (similar a “saldo pré-pago regulado”).
-
-2. **Regras de negócio como contratos digitais:**
-
-   * Definidos em SaaS (JSON/YAML configs + código).
-   * Auditáveis e registrados via **CEDSFN** para garantir integridade.
-
-3. **Integração técnica:**
-
-   * Interfaces seguem o **Manual de Comunicação CEDSFN 1.11 (ISO 20022 adaptado)**.
-   * LiquiDREX conversa via mensageria segura com o Bacen, como os bancos já fazem hoje.
-
-4. **Segregação de fluxos:**
-
-   * **Pix (SPI):** entrada de fundos de cliente.
-   * **STR:** liquidação de reservas entre bancos/participantes.
-   * **Selic:** eventual uso futuro como lastro ou colateral.
-   * **LiquiDREX SaaS:** controle de saldo virtual, cashback e regras.
-
----
-
-## 📐 Regras Digitais – Exemplo
-
-```yaml
-contrato: cashback-transporte
-versao: 1.0
-entrada:
-  - metodo: Pix
-  - valor: 95
-saida:
-  - credito_especifico: 105 (uso: SPTrans, CEA, SemParar)
-  - cashback_livre: 20
-compensacao:
-  sistema: STR
-  reconciliacao: CEDSFN
-  liquidacao: D+0
-```
-
----
-## Fluxograma
-
-<img width="2055" height="1470" alt="image" src="https://github.com/user-attachments/assets/6eb61542-92e3-4493-8def-b6b87182fec1" />
-
-
-1. Usuário paga **Pix (R\$95)** via **SPI**.
-2. **LiquiDREX SaaS** recebe confirmação e credita:
-
-   * **R\$105 em saldo específico** (ex.: SPTrans, CEA, SemParar).
-   * **+20 em cashback Drex livre**.
-3. Usuário gasta nos **parceiros credenciados**.
-4. Parceiro solicita compensação via **CEDSFN (mensageria ISO 20022)**.
-5. LiquiDREX emite ordem no **STR** (reservas bancárias).
-6. **Selic** pode registrar títulos de lastro/colateral.
-7. **Bacen** faz a liquidação final e registro contábil.
-
----
-
-
+        | (9) Ordem de liquidação enviada ao Bacen
+        v
+[Bacen - Registro contábil final]
