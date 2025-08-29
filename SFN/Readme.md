@@ -1,36 +1,44 @@
 # 💳 LiquiDREX – Bandeira Drex/Pix Promocional (sem custódia)
 
-A **LiquiDREX** é um **SaaS de regras e reconciliação** que conecta **Pix (SPI)** ao **Drex centralizado** (sem blockchain, sem tokenização).
+A **LiquiDREX** é uma *fintech-bandeira* que atua como **SaaS de reconciliação e regras de negócio**, conectando **Pix (SPI)** com a rede **Drex centralizada**.
 
-* **Sem custódia**: a LiquiDREX não mantém dinheiro do cliente.
-* **Ordens ao Bacen (CEDSFN/STR/SPI)**: **sempre** pelos **bancos parceiros**.
-* **LiquiDREX consolida** posições multilaterais (clearing privado) e **instrui** os bancos a liquidarem entre si.
+⚠️ Importante:
+- A LiquiDREX **não faz custódia de valores**.
+- **Ordens ao Bacen (SPI/STR/SELIC)** são sempre enviadas pelos **bancos parceiros**.
+- A LiquiDREX apenas **consolida posições, aplica regras promocionais e organiza créditos**.
 
-## 🚀 Como funciona 
+---
 
-1. O cliente paga **R\$95 via Pix** → **Banco do Cliente** liquida no **SPI**.
-2. O crédito entra no **Banco do Parceiro** (recebedor) via SPI/STR (lastro 1:1).
-3. **LiquiDREX** recebe confirmações via APIs (Open Finance / integrações bancárias) e aplica regras:
+## 🚀 Como funciona
 
-   * **R\$105** de **crédito restrito** (SPTrans/CEA/SemParar).
-   * **+R\$20** de **cashback** (rede livre, mostrado no app).
-4. O cliente **só vê o cashback** no app; o **restrito** é consumido “no parceiro”.
-5. **LiquiDREX** calcula **net positions** entre bancos e parceiros (clearing privado).
-6. **Bancos** (do parceiro e do cliente, conforme o caso) **enviam as ordens** ao Bacen (CEDSFN/STR/SPI) para **liquidação final**.
+1. **Usuário (App LiquiDREX)** paga **R$95 via Pix**.  
+2. O valor é liquidado pelo **SPI** em **conta do banco parceiro** (lastro 1:1 no Bacen).  
+3. O **Core SaaS LiquiDREX** recebe confirmação via Open Finance / CEDSFN.  
+4. LiquiDREX aplica regras comerciais:  
+   - **R$105** em **créditos de parceiro** (SPTrans, CEA, SemParar).  
+   - **R$20** em **cashback DrexPromo** (promocional, restrito à rede LiquiDREX).  
+5. O cliente enxerga no app:  
+   - **Saldo consolidado (Open Finance)** → direto do banco.  
+   - **Créditos comprados** em parceiros (SPTrans, etc.).  
+   - **Cashback DrexPromo** → promocional, restrito à rede.  
+6. Parceiros consomem os créditos do cliente via integração com seus **bancos parceiros**.  
+7. LiquiDREX **consolida net positions** em clearing privado.  
+8. **Bancos parceiros** emitem ordens de liquidação ao **STR/Selic**.  
+9. O **Bacen** registra a liquidação final.
 
-> Exceções (fraude/roubo): devolução **somente** pelo mecanismo **Pix MED**, acionado **pelo(s) banco(s)**; a LiquiDREX apenas **congela** os saldos promocionais e **orquestra** o fluxo documental.
+---
 
-## 📊 Workflow ASCII 
+## 📊 Workflow ASCII
 
-```
+```text
 [Usuário - App LiquiDREX]
         |
-        | (1) Pix R$95 (consent via Open Finance)
+        | (1) Pix R$95 (consentimento Open Finance)
         v
 [Banco do Cliente] -----------------------------.
         |                                         \
-        | (2) Liquidação SPI/STR (1:1)             \  Mensageria Bacen
-        v                                           \ (ISO 20022 / CEDSFN)
+        | (2) Liquidação SPI/STR (1:1)             \  CEDSFN (ISO 20022)
+        v                                           \  Mensageria Bacen
 [Bacen - SPI/STR]                                   \
         |                                            v
         | (3) Crédito no Banco do Parceiro     [Banco do Parceiro]
@@ -40,34 +48,37 @@ A **LiquiDREX** é um **SaaS de regras e reconciliação** que conecta **Pix (SP
 
 [LiquiDREX - Core SaaS (sem custódia)]
         |
-        | (4) Aplica regras: +R$105 restrito (parceiro) +R$20 cashback (livre)
+        | (4) Aplica regras comerciais:
+        |       - R$105 “créditos de parceiro” (SPTrans/CEA/SemParar)
+        |       - +R$20 “cashback DrexPromo” (restrito à rede LiquiDREX)
         v
-[App do Cliente] --- exibe APENAS cashback --- (restrito é invisível)
+[App do Cliente] --- exibe:
+        • Saldo consolidado (Open Finance)
+        • Créditos comprados em parceiros (SPTrans/CEA/etc.)
+        • Cashback DrexPromo (promocional, rede LiquiDREX)
 
 [Consumo no Parceiro]
         |
-        | (5) Parceiro debita saldo restrito (via integração c/ Banco do Parceiro)
+        | (5) Débito dos créditos via Banco do Parceiro
         v
 [LiquiDREX - Consolidação (clearing privado)]
         |
-        | (6) Calcula NET entre bancos/parceiros e INSTRUI liquidação
+        | (6) Calcula posições líquidas (NET) entre bancos/parceiros
         v
-[Bancos Parceiros]  --> (7) Enviam ordens ao Bacen (CEDSFN/STR/SPI)
+[Bancos Parceiros]  --> (7) Envio de ordens ao Bacen (SPI/STR/SELIC)
         |
         v
 [Bacen - Liquidação Final e Registro Contábil]
+
 ```
 
 ## ✅ Benefícios
 
-* **Compliance**: só bancos falam com Bacen; LiquiDREX é **bandeira/orquestradora**.
-* **Sem risco de custódia**: dinheiro sempre em **bancos parceiros**.
-* **Simples para o cliente**: “**Pague 95 → receba 105 + 20 de cashback**”.
-* **Escalável**: clearing privado + liquidação interbancária padrão.
+- Compliance garantido: apenas bancos interagem com Bacen.
+- LiquiDREX sem risco regulatório: não faz custódia → atua como bandeira/orquestradora.
+- Valor ao cliente: “Pague R$95 → receba R$105 em créditos + R$20 de cashback DrexPromo”.
+- Escalabilidade: modelo de clearing privado + liquidação final no STR.
+- Flexível: funciona tanto para convênios públicos (SPTrans) quanto para contratos privados (SemParar, CEA).
 
-## 🔒 Regras essenciais
-
-* **Sem reconversão** Drex→Pix (apenas **MED** em fraude/roubo).
-* **Créditos restritos** consumidos no parceiro; **app mostra só cashback**.
-* **Sem tokenização** e sem fracionamento de ativos (ativo **indivisível**).
-* **Convênios** com entes públicos (SPTrans) e **contratos** com privados (SemParar/CEA) **bancam os incentivos**.
+## 📌 Tagline
+LiquiDREX – Pague em Pix, receba em benefícios. Reconciliação inteligente, lastro 1:1 no Bacen.
